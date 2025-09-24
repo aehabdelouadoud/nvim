@@ -1,0 +1,6 @@
+require 'core.opts'
+require 'core.lazy'
+require 'core.autocmds'
+require 'core.keymaps'
+require 'core.lsp'
+require 'core.custom-highlights'
