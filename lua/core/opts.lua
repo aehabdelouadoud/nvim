@@ -6,9 +6,6 @@ vim.o.shell = '/usr/bin/env bash'
 -- Enable global statusline
 vim.o.laststatus = 3
 
--- Set a simple statusline
--- vim.o.statusline = "%f %m%r %=Ln:%l/%L Col:%c"
-
 -- Enable line numbers
 vim.o.number = true
 vim.o.relativenumber = true
@@ -40,14 +37,14 @@ vim.o.cursorline = true
 vim.o.undofile = true
 
 -- Disable swapfile
-vim.o.swapfile = false
+vim.o.swapfile = true
 vim.o.backup = false
 
 -- Set system clipboard as default register
 vim.o.clipboard = 'unnamedplus'
 
 -- Set two color columns at 80 and 120 characters
-vim.opt.colorcolumn = '80'
+vim.o.colorcolumn = '80'
 
 -- Disable the built-in statusline
 vim.o.laststatus = 0
@@ -67,15 +64,15 @@ vim.opt.listchars = {
 	tab = '↦ ', -- │
 	eol = '↲',
 	extends = '»',
-	nbsp = '␣',
 	precedes = '«',
+	nbsp = '␣',
 	trail = '›', -- ·
 }
 
 -- Set fillchars
 vim.opt.fillchars = {
 	diff = '╱',
-	eob = '~', -- End of buffer
+	eob = '~',
 	fold = ' ',
 	foldclose = '',
 	foldopen = '',
@@ -84,9 +81,6 @@ vim.opt.fillchars = {
 	horiz = '-',
 	vert = '│',
 }
-
--- Enable syntax highlighting
-vim.cmd 'syntax enable'
 
 -- Customize diagnostic icons
 local signs = {
