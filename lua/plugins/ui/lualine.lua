@@ -13,19 +13,6 @@ return {
 		local lualine = require 'lualine'
 		local lazy_status = require 'lazy.status' -- to configure lazy pending updates count
 
-		-- Theme
-
-		local colors = {
-			blue = '#7daea3',
-			green = '#89b482',
-			violet = '#d3869b',
-			yellow = '#d8a657',
-			red = '#ea6962',
-			fg = '#d4be98',
-			bg = '#282828',
-			inactive_bg = '#383838',
-		}
-
 		-- configure lualine with modified theme
 		lualine.setup {
 			-- If you wanna disable it.
@@ -60,7 +47,8 @@ return {
 					-- { "mode", separator = { left = "", right = "" }, right_padding = 2 },
 				},
 				lualine_b = {
-					{ 'mode' },
+					-- { 'mode' },
+					{ 'ex.cwd' },
 					{ 'branch' },
 					-- { "filename" },
 					-- { "filetype" },
@@ -79,7 +67,6 @@ return {
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
-						color = { fg = colors.blue },
 					},
 					-- { "encoding" },
 					-- { "fileformat" },
@@ -103,26 +90,8 @@ return {
 							return '󰄉 ' .. tostring(timer)
 						end,
 					},
-					{ 'ex.cwd' },
 					{ 'ex.lsp.single' },
 					-- { 'ex.lsp.null_ls' },
-					--[[ {
-						function()
-							local enabled = require("pigeon.config").options.datetime.date.enabled
-							local battery = require("pigeon.datetime").current_date()
-
-							if enabled then
-								return battery
-							else
-								return ""
-							end
-						end,
-					},
-					{
-						function()
-							return "󰃰 " .. os.date("%I:%M:%S %p")
-						end,
-					}, ]]
 					{
 						'ex.progress',
 
@@ -141,8 +110,8 @@ return {
 						-- to turn this logic off.
 						bottom = 'Bot',
 					},
-					-- { "ex.spellcheck" },
-					{ 'fileformat' },
+					{ 'ex.spellcheck' },
+					-- { 'fileformat' },
 				},
 
 				lualine_z = {},

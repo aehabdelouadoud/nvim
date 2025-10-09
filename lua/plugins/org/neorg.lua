@@ -1,21 +1,21 @@
 return {
-  'nvim-neorg/neorg',
-  lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-  version = '*', -- Pin Neorg to the latest stable release
-  config = true,
-  opts = {
-    load = {
-      ['core.defaults'] = {},
-      ['core.concealer'] = {},
-      ['core.dirman'] = {
-        config = {
-          workspaces = {
-            default = '~/org/zettelkasten/',
-          },
-          default_workspace = 'default',
-          index = '_index.norg', -- The name of the main (root) .norg file
-        },
-      },
-    },
-  },
+	'nvim-neorg/neorg',
+	lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+	version = '*', -- Pin Neorg to the latest stable release
+	config = true,
+	opts = {
+		load = {
+			['core.defaults'] = {},
+			['core.concealer'] = {},
+			['core.dirman'] = {
+				config = {
+					workspaces = {
+						default = '~/org/neorg/',
+					},
+					default_workspace = 'default',
+					index = 'index.norg', -- The name of the main (root) .norg file
+				},
+			},
+		},
+	},
 }

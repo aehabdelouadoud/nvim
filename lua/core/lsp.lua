@@ -1,20 +1,28 @@
--- Enable lsps
-vim.lsp.enable 'pyright' -- Python
--- vim.lsp.enable 'clangd' -- C/C++
-vim.lsp.enable 'luals' -- Lua
-vim.lsp.enable 'texlab' -- Lua
-vim.lsp.enable 'autotools'
+--                            === Enable and configuring lsps ===
 
--- Configure it
-vim.lsp.config['autotools'] = {
-	cmd = { 'autotools-language-server' }, -- Make sure this is in your PATH
-	filetypes = { 'make' },
-	root_markers = { 'Makefile', '.git' },
-	settings = {},
+local lsp    = vim.lsp
+local config = vim.lsp.config -- NOTE: I know i can just add lsp, but just in case i swapped them :? for some reason.
+
+-- Enable lsps
+lsp.enable 'pyright'      -- Python
+lsp.enable 'clangd'       -- C/C++
+lsp.enable 'luals'        -- Lua
+lsp.enable 'texlab'       -- Lua
+lsp.enable 'beancountls'  -- Beancount
+lsp.enable 'superhtml'    -- The HTML programming language!!
+
+config['beancountls'] = { -- TODO: What's the diffrence btw this format and config.beancountls
+	cmd       = { 'beancount-language-server' }, -- Command and arguments to start the server.
+	filetypes = { 'beancount' }                  -- Filetypes to automatically attach to.
+}
+
+config.texlab = {
+	cmd = { 'texlab' },   -- Command and arguments to start the server.
+	filetypes = { 'tex' },-- Filetypes to automatically attach to.
 }
 
 -- Reconfigure
-vim.lsp.config.clangd = {
+config.clangd = {
 	cmd = {
 		'clangd',
 		'--clang-tidy',
@@ -22,14 +30,11 @@ vim.lsp.config.clangd = {
 		'--offset-encoding=utf-8',
 	},
 	root_markers = { '.clangd', 'compile_commands.json' },
-	filetypes = { 'c', 'cpp' },
+	filetypes    = { 'c', 'cpp' },
 }
 
-vim.lsp.config['luals'] = {
-	-- Command and arguments to start the server.
+config.luals = {
 	cmd = { 'lua-language-server' },
-
-	-- Filetypes to automatically attach to.
 	filetypes = { 'lua' },
 
 	-- Sets the "root directory" to the parent directory of the file in the
@@ -43,17 +48,12 @@ vim.lsp.config['luals'] = {
 	-- can be found here https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json
 	settings = {
 		Lua = {
+			diagnostics = {
+				globals = { 'vim' },
+			},
 			runtime = {
 				version = 'LuaJIT',
 			},
 		},
 	},
-}
-
-vim.lsp.config['texlab'] = {
-	-- Command and arguments to start the server.
-	cmd = { 'texlab' },
-
-	-- Filetypes to automatically attach to.
-	filetypes = { 'tex' },
 }

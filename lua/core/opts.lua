@@ -1,100 +1,100 @@
+local o   = vim.o
+local g   = vim.g
+local opt = vim.opt
+
 -- Set leader key
-vim.g.mapleader = ' '
+g.mapleader = ' '
 
-vim.o.shell = '/usr/bin/env bash'
 
--- Enable global statusline
-vim.o.laststatus = 3
+o.shell          = '/usr/bin/env bash' -- Shell!!
+o.laststatus     = 3                   -- Enable global statusline
+o.clipboard      = 'unnamedplus'       -- Use system clipboard
+o.spell          = true                -- For knowing how good am I in English :)
+-- o.colorcolumn = '80' -- WARN: virt-column is being used for this purpose, no need to add it.
 
--- Enable line numbers
-vim.o.number = true
-vim.o.relativenumber = true
-
--- Enable mouse support
-vim.o.mouse = 'a'
-
--- Use system clipboard
-vim.o.clipboard = 'unnamedplus'
+-- Line number
+o.number         = true                -- Enable line numbers
+o.relativenumber = true
 
 -- Better search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.hlsearch = true
-vim.o.incsearch = true
+o.ignorecase = true
+o.smartcase  = true
+o.hlsearch   = true
+o.incsearch  = true
 
 -- Tabs & indentation
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
--- vim.o.expandtab = true
-vim.o.smartindent = true
+o.tabstop     = 4
+o.shiftwidth  = 4
+o.expandtab   = true
+o.smartindent = true
 
 -- Appearance
-vim.o.termguicolors = true
-vim.o.signcolumn = 'yes'
-vim.o.cursorline = true
+o.termguicolors = true
+o.signcolumn    = 'yes'
+o.cursorline    = true
 
 -- Save undo history
-vim.o.undofile = true
+o.undofile = true
 
 -- Disable swapfile
-vim.o.swapfile = true
-vim.o.backup = false
-
--- Set system clipboard as default register
-vim.o.clipboard = 'unnamedplus'
-
--- Set two color columns at 80 and 120 characters
-vim.o.colorcolumn = '80'
+o.swapfile = true
+o.backup   = false
 
 -- Disable the built-in statusline
-vim.o.laststatus = 0
+o.laststatus = 0
 
-vim.opt.wrap = false -- Disable wrapping of lines
+opt.wrap = false -- Disable wrapping of lines
 
-vim.opt.hidden = true -- Keep buffers in background
-vim.opt.sessionoptions:append 'globals' -- Save global vars in sessions
-vim.opt.undofile = true -- Persistent undo
-vim.opt.lazyredraw = true -- Speed up macros
-vim.opt.shortmess:append 'c' -- Reduce completion messages
+opt.hidden = true -- Keep buffers in background
+opt.sessionoptions:append 'globals' -- Save global vars in sessions
+opt.undofile = true -- Persistent undo
+opt.lazyredraw = true -- Speed up macros
+opt.shortmess:append 'c' -- Reduce completion messages
 
 -- Set listchars
-vim.opt.list = true -- Enable list mode
-vim.opt.listchars = {
-	space = '·',
-	tab = '↦ ', -- │
-	eol = '↲',
-	extends = '»',
+opt.list = true -- Enable list mode
+opt.listchars = {
+	space    = '·',
+	tab      = '↦ ', -- Other suitible characters: │
+	eol      = '↲',
+	extends  = '»',
 	precedes = '«',
-	nbsp = '␣',
-	trail = '›', -- ·
+	nbsp     = '␣',
+	trail    = '›'
 }
 
 -- Set fillchars
-vim.opt.fillchars = {
-	diff = '╱',
-	eob = '~',
-	fold = ' ',
+opt.fillchars = {
+	diff      = '╱',
+	eob       = '~',
+	fold      = ' ',
 	foldclose = '',
-	foldopen = '',
-	foldsep = ' ',
-	msgsep = '─',
-	horiz = '-',
-	vert = '│',
+	foldopen  = '',
+	foldsep   = ' ',
+	msgsep    = '─',
+	horiz     = '-',
+	vert      = '│'
 }
 
--- Customize diagnostic icons
-local signs = {
-	Error = '', -- Icon for errors
-	Warn = '', -- Icon for warnings
-	Info = '', -- Icon for info messages
-	Hint = '', -- Icon for hints
-}
+-- lua/neovide.lua
+if g.neovide then
+	-- Font
+	o.guifont = "0xProto Nerd Font:h12"  -- adjust size as needed
 
--- Apply the custom icons to the sign column
-for type, icon in pairs(signs) do
-	vim.fn.sign_define('DiagnosticSign' .. type, {
-		text = icon,
-		texthl = 'DiagnosticSign' .. type,
-		numhl = 'DiagnosticSign' .. type,
-	})
+	-- Hide mouse when typing
+	g.neovide_hide_mouse_when_typing = true
+
+	-- padding
+	g.neovide_padding_top    = 20
+	g.neovide_padding_bottom = 20
+	g.neovide_padding_right  = 20
+	g.neovide_padding_left   = 20
 end
+
+-- Configure Neovim's built-in diagnostic system to show virtual lines
+vim.diagnostic.config {
+	virtual_text     = false, -- Disable virtual text (optional)
+	virtual_lines    = true,  -- Enable virtual lines for diagnostics
+	signs            = true,  -- Show diagnostic signs (e.g., icons)
+	update_in_insert = true,  -- Show diagnostics even while typing
+}
