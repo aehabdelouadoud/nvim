@@ -8,7 +8,8 @@ return {
 			sh = { 'shfmt' },
 			rust = { 'rustfmt' },
             beancount = {'bean-format'},
-            ledger = {'bean-format'}
+            ledger = {'bean-format'},
+            -- kld = {'kldfmt'}
 		},
 		formatters = {
 			indentwrap = {
