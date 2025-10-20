@@ -27,5 +27,11 @@
 # What?
 Neovim for being kinda Good Enough! (maby)
 
+# SEE!
+<img width="883" height="496" alt="image" src="https://github.com/user-attachments/assets/850fced3-7841-482b-8381-ca9097781b60" />
+<img width="883" height="496" alt="image" src="https://github.com/user-attachments/assets/d1f0093f-8a88-419b-b798-b21e36887ace" />
+<img width="883" height="496" alt="image" src="https://github.com/user-attachments/assets/2479ab21-fb57-4866-a981-ab282e45dd91" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/eece79fc-3003-4b76-8721-df64e5935db9" />
+
 # TODO!
 - [x] Organize modules.
