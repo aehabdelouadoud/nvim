@@ -13,5 +13,6 @@ return {
 	{ import = 'plugins.lang' },  -- Language specific plugins.
 	{ import = 'plugins.utils' }, -- Extra userful utils!
 	{ import = 'plugins.org' },   -- For the organizers :)
-	{ import = 'plugins.hard' },   -- For hardware dev related.
+	{ import = 'plugins.hard' },  -- For hardware dev related.
+	{ import = 'plugins.ai' },    -- AI related.
 }
