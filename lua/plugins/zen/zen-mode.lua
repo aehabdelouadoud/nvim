@@ -21,5 +21,14 @@ return {
                 list = false, -- disable whitespace characters
             },
         },
-    }
+        plugins = {
+            twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+        }
+    },
+    on_open = function ()
+        vim.cmd [[Lspsaga winbar_toggle]]
+    end,
+    on_close = function ()
+        vim.cmd [[Lspsaga winbar_toggle]]
+    end
 }

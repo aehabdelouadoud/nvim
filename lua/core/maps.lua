@@ -20,6 +20,8 @@ vim.keymap.set('v', '<A-l>', ':MoveHBlock(1)<CR>', opts)
 ]]
 
 map('n', '<leader>w', '<CMD>w<CR>',        { desc = 'Save file' })
+map('n', '<leader>z', '<CMD>ZenMode<CR>',        { desc = 'Toggle Zen Mode' })
+map('n', '<leader>q', '<CMD>q<CR>',        { desc = 'Quit buffer' })
 
 -- Navigation
 map('n', '-',         '<CMD>Oil<CR>',                    { desc = 'Open parent directory' })
