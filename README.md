@@ -31,6 +31,8 @@ Neovim for being kinda Good Enough! (maby)
 <img width="883" height="496" alt="image" src="https://github.com/user-attachments/assets/d1f0093f-8a88-419b-b798-b21e36887ace" />
 <img width="883" height="496" alt="image" src="https://github.com/user-attachments/assets/2479ab21-fb57-4866-a981-ab282e45dd91" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/eece79fc-3003-4b76-8721-df64e5935db9" />
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/1a03f69e-f4db-4d94-9e67-57306128c7c3" />
 
 # TODO!
 - [x] Organize modules.
+- [ ] Configure copilot.lua with blink.cmp
