@@ -7,12 +7,12 @@ return {
 	{ import = 'plugins.ui' },
 	{ import = 'plugins.ts' },
 
-	{ import = 'plugins.42' },    -- 42 specific and school stuff!
-	{ import = 'plugins.edit' },  -- Helps writing/editing!
-	{ import = 'plugins.nav' },   -- Navigation utils! for better j/k stff
+	{ import = 'plugins.42' },    -- 42 specific and school stuff
+	{ import = 'plugins.edit' },  -- Helps writing/editing
+	{ import = 'plugins.nav' },   -- Navigation utilities
 	{ import = 'plugins.lang' },  -- Language specific plugins.
-	{ import = 'plugins.utils' }, -- Extra userful utils!
-	{ import = 'plugins.org' },   -- For the organizers :)
-	{ import = 'plugins.hard' },  -- For hardware dev related.
-	{ import = 'plugins.zen' },   -- Zenmode
+	{ import = 'plugins.utils' }, -- Extra useful utilities
+	{ import = 'plugins.org' },   -- Organization.
+	{ import = 'plugins.zen' },   -- zen philosophy.
+	{ import = 'plugins.ai' }     -- AI Tools.
 }

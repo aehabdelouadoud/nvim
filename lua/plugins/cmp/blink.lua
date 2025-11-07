@@ -1,11 +1,9 @@
 return {
 	'saghen/blink.cmp',
-	-- optional: provides snippets for the snippet source
 	build = 'cargo build --release',
 	dependencies = {
 		'rafamadriz/friendly-snippets',
 		'giuxtaposition/blink-cmp-copilot',
-        -- "dnnr1/lorem-ipsum.nvim",
 	},
 
 	-- use a release tag to download pre-built binaries
@@ -50,15 +48,15 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer', --[[ 'lorem_ipsum' ]] }, -- , 'copilot'
-			--[[ providers = {
-				copilot = {
-					name = 'copilot',
-					module = 'blink-cmp-copilot',
-					score_offset = 100,
-					async = true,
-				},
-			}, ]]
+			default = { 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+            providers = {
+                copilot = {
+                    name = "copilot",
+                    module = "blink-cmp-copilot",
+                    score_offset = 100,
+                    async = true,
+                },
+            },
 		},
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
 		-- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,

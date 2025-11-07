@@ -23,6 +23,7 @@ return {
         },
         plugins = {
             twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+            tmux = { enabled = false }, -- disables the tmux statusline
         }
     },
     on_open = function ()
